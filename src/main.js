@@ -15,7 +15,8 @@ event.preventDefault();
 let query = input.value;
 
 if(query === ''){
- clearGallery()
+    showLoader();
+ clearGallery();
 hideLoader();
     iziToast.show({
     message: 'Sorry, there are no images matching your search query. Please try again!',
@@ -23,13 +24,14 @@ messageColor: '#fafafb',
 backgroundColor: '#ef4040',
 position: 'topRight'
 })
- clearGallery()
+
 hideLoader();
 }else if(query){
+ clearGallery()
 showLoader();
 getImagesByQuery(query).then(response => {
 if(response.data.hits.length === 0){
- clearGallery()
+
 hideLoader();
  iziToast.show({
     message: 'Sorry, there are no images matching your search query. Please try again!',

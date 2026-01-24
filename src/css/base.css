@@ -83,9 +83,8 @@ button:hover{
 /* LOADER */
 
 .loader {
-   margin-left: auto;
-   margin-right: auto;
-  margin-top: 32px; 
+  left: 50%;
+  position: absolute;
     width: 48px;
     height: 48px;
     border: 5px solid #FFF;
@@ -104,6 +103,11 @@ button:hover{
         transform: rotate(360deg);
     }
     } 
+
+    label{
+      position: relative;
+      display: inline-block;
+    }
 
     /* GALLERY */
 
