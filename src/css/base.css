@@ -83,7 +83,7 @@ button:hover{
 /* LOADER */
 
 .loader {
-  left: 50%;
+  left:50px;
   position: absolute;
     width: 48px;
     height: 48px;
