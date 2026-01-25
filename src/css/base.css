@@ -82,15 +82,24 @@ button:hover{
 
 /* LOADER */
 
+.input-btn{
+display: flex;
+flex-wrap: wrap;
+gap: 4px;
+}
+
+.form-div{
+  text-align: center;
+  margin-top: 32px;
+}
+
 .loader {
-  left:50px;
-  position: absolute;
+  display: none;
     width: 48px;
     height: 48px;
     border: 5px solid #FFF;
     border-bottom-color: #4e75ff;
     border-radius: 50%;
-    display: block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
     }
@@ -104,10 +113,11 @@ button:hover{
     }
     } 
 
-    label{
-      position: relative;
+    .loader.is-visible{
       display: inline-block;
+      visibility: visible;
     }
+
 
     /* GALLERY */
 
@@ -135,8 +145,8 @@ button:hover{
   padding-right: 25px;
     }
     
-img{
-  flex-shrink: 0;
-  width: 360px;
-  height: 200px;
-}
+    img{
+    flex-shrink: 0;
+    width: 360px;
+    height: 200px;
+  }

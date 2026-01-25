@@ -29,16 +29,14 @@ export function clearGallery(){
 }
 
 export function showLoader(){
-    const loader = document.createElement('span');
-    loader.classList.add('loader');
-    const input = document.querySelector('input');
-  input.insertAdjacentElement('afterend' ,loader);
+    const loader = document.querySelector('.loader');
+loader.classList.add('is-visible');
+
 }
 
 export function hideLoader(){
-    const loaderEl = document.querySelector('.loader');
-    if( loaderEl ){
-loaderEl.remove();
-}
+    const loader = document.querySelector('.loader');
+loader.classList.remove('is-visible');
+
 }
 
