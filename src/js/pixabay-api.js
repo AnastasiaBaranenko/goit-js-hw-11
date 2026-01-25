@@ -15,6 +15,8 @@ image_type: 'photo',
 orientation: 'horizontal',
 safesearch: true
 }})
-.then(response => response)
+.then(response =>   
+     {return response.data.hits;}
+    );
 }
 

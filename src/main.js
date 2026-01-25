@@ -5,9 +5,9 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
 const input = document.querySelector('input');
-const button = document.querySelector('button');
+const form = document.querySelector('form');
 
-button.addEventListener('click',(event) => {
+form.addEventListener('submit',(event) => {
 event.preventDefault();
 let query = input.value;
 
@@ -22,9 +22,8 @@ position: 'topRight'
 }else if(query){
  clearGallery()
 showLoader();
-getImagesByQuery(query).then(response => {
- hideLoader();
-if(response.data.hits.length === 0){
+getImagesByQuery(query).then(images => {
+if(images.length === 0){
  iziToast.show({
     message: 'Sorry, there are no images matching your search query. Please try again!',
 messageColor: '#fafafb',
@@ -32,11 +31,14 @@ backgroundColor: '#ef4040',
 position: 'topRight'
 })
 }
- hideLoader();
-createGallery(response.data.hits)})
+createGallery(images)})
 .catch(error => (error))
+.finally(( )=>
+{ hideLoader();}
+)
 input.value = '';
 }
+
 })
 
 

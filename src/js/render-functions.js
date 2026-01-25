@@ -3,6 +3,13 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const list = document.querySelector('ul');
 
+let gallery = new SimpleLightbox('.gallery a', {
+    captions: true,
+    captionsData: 'alt',
+    captionPosition: 'bottom'
+});
+
+
 export function createGallery(images){
     
     const img = images.map((image) => {
@@ -18,25 +25,21 @@ list.insertAdjacentHTML("beforeend", img);
     gallery.refresh();
 };
 
-let gallery = new SimpleLightbox('.gallery a', {
-    captions: true,
-    captionsData: 'alt',
-    captionPosition: 'bottom'
-});
-
 export function clearGallery(){
    list.innerHTML = '';
 }
 
 export function showLoader(){
     const loader = document.querySelector('.loader');
+    if (loader){
 loader.classList.add('is-visible');
-
+}
 }
 
 export function hideLoader(){
     const loader = document.querySelector('.loader');
+    if(loader){
 loader.classList.remove('is-visible');
-
+    }
 }
 
