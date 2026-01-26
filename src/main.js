@@ -9,7 +9,7 @@ const form = document.querySelector('form');
 
 form.addEventListener('submit',(event) => {
 event.preventDefault();
-let query = input.value;
+let query = input.value.trim();
 
 if(query === ''){
  clearGallery();
@@ -30,9 +30,12 @@ messageColor: '#fafafb',
 backgroundColor: '#ef4040',
 position: 'topRight'
 })
-}
-createGallery(images)})
-.catch(error => (error))
+}else{
+createGallery(images)}})
+.catch(error => {iziToast.error({ message: 'Sorry, there are no images matching your search query. Please try again!',
+messageColor: '#fafafb',
+backgroundColor: '#ef4040',
+position: 'topRight'})})
 .finally(( )=>
 { hideLoader();}
 )
